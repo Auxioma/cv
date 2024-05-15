@@ -1,0 +1,58 @@
+import React from "react";
+
+class Services extends React.Component {
+    render() {
+        return (
+<section id="section-services" class="no-bottom">
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-12 text-center wow fadeInUp">
+                            <h2>What I Do</h2>
+                            <div class="space-border"></div>
+                        </div>
+                        <div class="spacer-single"></div>
+                        <div class="row g-0">
+                            <div class="col-lg-4 wow fadeIn" data-wow-delay=".2s">
+                                <div class="de_3d-box">
+                                    <div class="d-inner">
+                                        <i class="icon_genius id-color"></i>
+                                        <div class="text">
+                                            <h3>Branding</h3>
+                                            Ex velit cupidatat magna voluptate deserunt quis et dolor adipisicing elit culpa ad exercitation proident irure deserunt irure.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 wow fadeIn" data-wow-delay=".4s">
+                                <div class="de_3d-box">
+                                    <div class="d-inner">
+                                        <i class="icon_tools id-color"></i>
+                                        <div class="text">
+                                            <h3>Development</h3>
+                                            Ex velit cupidatat magna voluptate deserunt quis et dolor adipisicing elit culpa ad exercitation proident irure deserunt irure.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 wow fadeIn" data-wow-delay=".6s">
+                                <div class="de_3d-box">
+                                    <div class="d-inner">
+                                        <i class="icon_camera_alt id-color"></i>
+                                        <div class="text">
+                                            <h3>Photography</h3>
+                                            Ex velit cupidatat magna voluptate deserunt quis et dolor adipisicing elit culpa ad exercitation proident irure deserunt irure.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+        );
+    }
+}
+
+export default Services;
