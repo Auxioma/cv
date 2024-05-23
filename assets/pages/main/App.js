@@ -1,6 +1,15 @@
 import React from "react";
 import Header from "../../components/main/Header";
 import Slider from "../../components/main/Slider";
+import About from "../../components/main/About";
+import Quote from "../../components/main/Quote";
+import Services from "../../components/main/Services";
+import Portfolio from "../../components/main/portfolio";
+import Resume from "../../components/main/Resume";
+import FunFacts from "../../components/main/Fun-facts";
+import Blog from "../../components/main/Blog";
+import Contact from "../../components/main/Contact";
+import Footer from "../../components/main/Footer";
 
 class App extends React.Component {
   render() {
@@ -25,8 +34,28 @@ class App extends React.Component {
             <div className="d-modal-loader"></div>
           </div>
 
-          <Slider />
-          
+          <Slider/>
+
+          <About/>
+
+          <Quote/>
+
+          <Services/>
+
+          <Portfolio/>
+
+          <Resume/>
+
+          <FunFacts/>
+
+          <Blog/>
+
+          <Contact/>
+
+          <a href="index-particle-effect.html#" id="back-to-top"></a>
+
+          <Footer />
+
         </div>
       </>
     );
