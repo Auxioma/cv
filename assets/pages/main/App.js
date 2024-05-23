@@ -1,16 +1,7 @@
 import React from "react";
 import Header from "../../components/main/Header";
 import Slider from "../../components/main/Slider";
-import About from "../../components/main/About";
-import Myquote from "../../components/main/Myquote";
-import Services from "../../components/main/Services";
-import Portfolio from "../../components/main/Portfolio";
-import Resume from "../../components/main/Resume";
-import Funfacts from "../../components/main/Funfacts";
-import Blog from "../../components/main/Blog";  
-import Contact from "../../components/main/Contact";
 
-import Footer from "../../components/main/Footer";
 
 class App extends React.Component {
   render() {
@@ -41,7 +32,7 @@ class App extends React.Component {
 
         <a href="index-particle-effect.html#" id="back-to-top"></a>
         
-        <Footer />
+      
       </>
     );
   }
