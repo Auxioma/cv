@@ -29,6 +29,7 @@ class Article
     private ?Category $category = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("blog")]
     private ?string $picture = null;
 
     public function getId(): ?int

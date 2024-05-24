@@ -20,8 +20,8 @@ class BlogPost extends React.Component {
             .then(data => {
                 console.log(data);
 
-                if (data && data.message && data.message[0].title) {
-                    this.setState({article: data.message[0].title});
+                if (data && data.articles) {
+                    this.setState({articles: data.articles});
                 } else {
                     this.setState({errorMessage: 'No data found!'});
                 }
@@ -34,24 +34,29 @@ class BlogPost extends React.Component {
 
 
     render() {
-        return (
+
+        const {articles, errorMessage} = this.state;
+
+        if (errorMessage) {
+            return <div className="error">{errorMessage}</div>;
+        }
+
+        return articles.map(({picture, name, description}) => (
             <div className="bloglist item">
                 <div className="post-content">
                     <div className="post-image">
                         <div className="de_modal" data-url="single-blog.html"><img alt=""
-                                                                                   src="images/blog/1.jpg"
+                                                                                   src={`public/images/blog/${picture}`}
                                                                                    className="lazy grayscale"/>
                         </div>
                     </div>
                     <div className="post-text">
-                        <h4 className="de_modal" data-url="single-blog.html">How to Make Better User
-                            Interface</h4>
-                        <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                            reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
+                        <h4 className="de_modal" data-url="single-blog.html">{name}</h4>
+                        <p>{description}</p>
                     </div>
                 </div>
             </div>
-        )
+        ));
     }
 }
 
