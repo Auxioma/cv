@@ -1,4 +1,7 @@
 import React from "react";
+import Titre from "./partials/title";
+import Slides from "./partials/typed";
+import Country from "./partials/country";
 
 class Slider extends React.Component {
 
@@ -22,7 +25,7 @@ class Slider extends React.Component {
 
             .then(data => {
                 console.log(data);
-                if(data && data.message && isInArray(data.message)) {
+                if (data && data.message && isInArray(data.message)) {
                     this.setState({slider: data.message});
                 } else {
                     this.setState({error: 'No data found!'});
@@ -42,22 +45,17 @@ class Slider extends React.Component {
                         <div className="container">
                             <div className="row align-items-center">
                                 <div className="col-md-12">
-                                    <h6 className="wow fadeInUp" data-wow-delay=".4s"><span className="id-color">I Am Kyros Noriaki</span></h6>
+                                    <h6 className="wow fadeInUp" data-wow-delay=".4s">
+                                        <Titre />
+                                    </h6>
                                     <div className="spacer-10"></div>
                                     <div className="h1_big text-white wow fadeInUp" data-wow-delay=".6s">
-                                        <div className="typed-strings">
-                                            <p></p>
-                                            <p>Programmer</p>
-                                            <p>Photographer</p>
-                                        </div>
-                                        <div className="typed"></div>
+                                        <Slides />
                                     </div>
                                 </div>
                                 <div className="spacer-20"></div>
                                 <ul className="list_location wow fadeInUp" data-wow-delay=".8s">
-                                    <li><span>France</span>Bodin, Chauveau</li>
-                                    <li><span>USA</span>Louisiana, Bayerfurt</li>
-                                    <li><span>German</span>Hamburg, Dortmund</li>
+                                    <Country />
                                 </ul>
                             </div>
                         </div>

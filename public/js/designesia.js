@@ -2085,20 +2085,20 @@
             }
 
             /* go to anchor */
-             jQuery('.onepage #mainmenu li a').each(function() {
-                 var cur = jQuery(this);
-                 if (this.href.indexOf('#') != -1) {
-                     var href = jQuery(this).attr('href');
-                     if (jQuery(window).scrollTop() > jQuery(href).offset().top - 140) {
-                         clearTimeout($.data(this, "scrollCheck"));
-                         $.data(this, "scrollCheck", setTimeout(function() {
-                             jQuery('#mainmenu li a').removeClass('active');
-                             cur.addClass('active');
-                         }, 250));
-
-                     }
-                 }
-             });
+            jQuery('.onepage #mainmenu li a').each(function() {
+                var cur = jQuery(this);
+                if (this.href.indexOf('#') != -1) {
+                    var href = jQuery(this).attr('href');
+                    var offset = jQuery(href).offset();
+                    if (offset && jQuery(window).scrollTop() > offset.top - 140) {
+                        clearTimeout($.data(this, "scrollCheck"));
+                        $.data(this, "scrollCheck", setTimeout(function() {
+                            jQuery('#mainmenu li a').removeClass('active');
+                            cur.addClass('active');
+                        }, 250));
+                    }
+                }
+            });
 
         });
 
