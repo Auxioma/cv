@@ -1,6 +1,38 @@
 import React from "react";
+import BlogPost from "./partials/BlogPost";
 
 class Blog extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            blog: [],
+            error: null,
+        };
+    }
+
+    componentDidMount() {
+        fetch('http://127.0.0.1:8001/api/blog')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data.message[0].name);
+
+                if (data && data.message && data.message[0].name) {
+                    this.setState({blog: data.message[0].name});
+                } else {
+                    this.setState({error: 'No data found!'});
+                }
+            })
+            .catch(error => {
+                this.setState({error: error.message});
+            });
+    }
+
+
     render() {
         return(
             <>
@@ -13,102 +45,7 @@ class Blog extends React.Component {
                             </div>
                         </div>
                         <div id="carousel-blog" className="owl-carousel wow fadeInUp">
-                            <div className="bloglist item">
-                                <div className="post-content">
-                                    <div className="post-image">
-                                        <div className="de_modal" data-url="single-blog.html"><img alt=""
-                                                                                                   src="images/blog/1.jpg"
-                                                                                                   className="lazy grayscale"/>
-                                        </div>
-                                    </div>
-                                    <div className="post-text">
-                                        <h4 className="de_modal" data-url="single-blog.html">How to Make Better User
-                                            Interface</h4>
-                                        <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                                            reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bloglist item">
-                                <div className="post-content">
-                                    <div className="post-image">
-                                        <div className="de_modal" data-url="single-blog.html"><img alt=""
-                                                                                                   src="images/blog/2.jpg"
-                                                                                                   className="lazy grayscale"/>
-                                        </div>
-                                    </div>
-                                    <div className="post-text">
-                                        <h4 className="de_modal" data-url="single-blog.html">10 Web Design Tips From
-                                            Experts</h4>
-                                        <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                                            reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bloglist item">
-                                <div className="post-content">
-                                    <div className="post-image">
-                                        <div className="de_modal" data-url="single-blog.html"><img alt=""
-                                                                                                   src="images/blog/3.jpg"
-                                                                                                   className="lazy grayscale"/>
-                                        </div>
-                                    </div>
-                                    <div className="post-text">
-                                        <h4 className="de_modal" data-url="single-blog.html">The Importance of Web
-                                            Design</h4>
-                                        <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                                            reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bloglist item">
-                                <div className="post-content">
-                                    <div className="post-image">
-                                        <div className="de_modal" data-url="single-blog.html"><img alt=""
-                                                                                                   src="images/blog/4.jpg"
-                                                                                                   className="lazy grayscale"/>
-                                        </div>
-                                    </div>
-                                    <div className="post-text">
-                                        <h4 className="de_modal" data-url="single-blog.html">10 Web Design Tips From
-                                            Experts</h4>
-                                        <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                                            reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bloglist item">
-                                <div className="post-content">
-                                    <div className="post-image">
-                                        <div className="de_modal" data-url="single-blog.html"><img alt=""
-                                                                                                   src="images/blog/5.jpg"
-                                                                                                   className="lazy grayscale"/>
-                                        </div>
-                                    </div>
-                                    <div className="post-text">
-                                        <h4 className="de_modal" data-url="single-blog.html">The Importance of Web
-                                            Design</h4>
-                                        <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                                            reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bloglist item">
-                                <div className="post-content">
-                                    <div className="post-image">
-                                        <div className="de_modal" data-url="single-blog.html"><img alt=""
-                                                                                                   src="images/blog/6.jpg"
-                                                                                                   className="lazy grayscale"/>
-                                        </div>
-                                    </div>
-                                    <div className="post-text">
-                                        <h4 className="de_modal" data-url="single-blog.html">Tips for Healthy
-                                            Teeth<span></span></h4>
-                                        <p>Dolore officia sint incididunt non excepteur ea mollit commodo ut enim
-                                            reprehenderit cupidatat labore ad laborum consectetur consequat...</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <BlogPost/>
                         </div>
                     </div>
                 </section>

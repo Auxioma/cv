@@ -1,7 +1,7 @@
 import React from "react";
-import Titre from "./partials/title";
-import Slides from "./partials/typed";
-import Country from "./partials/country";
+import Titre from "./partials/Title";
+import Slides from "./partials/Typed";
+import Country from "./partials/Country";
 
 class Slider extends React.Component {
 

@@ -4,8 +4,8 @@ class Titre extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: '', // title should be a string
-            errorMessage: null, // better name for clarity
+            title: '',
+            errorMessage: null,
         };
     }
 

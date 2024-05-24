@@ -6,7 +6,7 @@ import Quote from "../../components/main/Quote";
 import Services from "../../components/main/Services";
 import Portfolio from "../../components/main/portfolio";
 import Resume from "../../components/main/Resume";
-import FunFacts from "../../components/main/Fun-facts";
+import FunFacts from "../../components/main/Funfacts";
 import Blog from "../../components/main/Blog";
 import Contact from "../../components/main/Contact";
 import Footer from "../../components/main/Footer";
